@@ -19,7 +19,11 @@
       $(document).ready(function(){
         $('#lightgallery').lightGallery({{{data}}});
         $('#lightgallery').on('onAfterOpen.lg', function(){
-          $('.lg-close').hide();
+        //  $('.lg-close').hide();
+            $('.lg-close').click(function(){
+        parent.history.back();
+        return false;
+        });
           setTimeout(function(){
             $('.lg-toogle-thumb').click();
           }, 5000);
